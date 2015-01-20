@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3.6" type="plugin" group="content" method="upgrade">
+    <name>Content - SP Comments</name>
+    <author>JoomShaper.com</author>
+    <creationDate>Aug 2011</creationDate>
+	<copyright>Copyright (C) 2010-2015 JoomShaper.com. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>support@joomshaper.com</authorEmail>
+    <version>2.0</version>
+    <description>
+    	<![CDATA[
+    		<p class="hide-installation">SP Comments - Disqus, Facebook and IntenseDebate commenting system.</p>
+			<div class="hide-details alert alert-warning">
+				<h4 style="margin-bottom: 10px;">SP Comments - Disqus, Facebook and IntenseDebate commenting system.</h4>
+				<p style="font-weight: normal; margin-bottom: 10px;">Don't forget to enable SP Comments plugin from plugin manager.</p>
+				<p><a class="btn btn-success" href="index.php?option=com_plugins&amp;view=plugins&amp;filter_search=SP%20Comments">Goto Plugin Manager</a></p>
+			</div>
+
+			<style type="text/css">
+				.view-plugin .hide-details {
+					display:none;
+				}
+
+				.view-install .hide-installation {
+					display: none;
+				}
+			</style>
+		]]>
+    </description>
+
+    <files>
+        <filename plugin="spcomments">spcomments.php</filename>
+        <filename>index.html</filename>
+        <folder>assets/</folder>
+        <folder>fields/</folder>
+        <folder>layout/</folder>
+        <folder>language/</folder>
+    </files>
+    <config>
+        <fields name="params" addfieldpath="/plugins/content/spcomments/fields">
+            <fieldset name="basic">
+				<field name="commenting_engine" type="list" default="facebook" label="ENGINE" description="ENGINE_DESC">
+					<option value="disqus">DISQUSS</option>
+					<option value="intensedebate">INTENSEDEBATE</option>
+					<option value="facebook">FB</option>
+				</field>
+				<field name="disqus_subdomain" type="text" default="" label="SUBDOMAIN" description="SUBDOMAIN_DESC" />
+				<field name="disqus_devmode" type="radio" class="btn-group" default="0" label="DEV_MODE" description="DEV_MODE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="intensedebate_acc" type="text" default="" label="INTENSEDEBATE_ACC" description="INTENSEDEBATE_ACC_DESC" />
+				<field name="fb_appID" type="text" default="" label="FB_ID" description="FB_ID_DESC" />
+				<field name="fb_width" type="number" default="500" label="COMMENTS_WIDTH" description="COMMENTS_WIDTH_DESC" />
+				<field name="fb_cpp" type="number" default="10" label="COMMENTS_PER_PAGE" description="COMMENTS_PER_PAGE_DESC" />
+				<field name="comments_count" type="radio" class="btn-group" default="0" label="COMMENTS_COUNT" description="COMMENTS_COUNT_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="catids" type="category" extension="com_content" multiple="true" size="10" default="all" label="CAT" description="CAT_DESC" />
+				<field name="k2catids" type="k2category" default="all" label="K2_CAT" description="K2_CAT_DESC" />
+				<field type="asset" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
